@@ -10,6 +10,7 @@ const destroyButton = document.querySelector('[data-destroy]');
 const boxes = document.querySelector('#boxes');
 
 function createBoxes(amount) {
+  const boxesItems = [];
   if (amount < 1 || amount > 100) {
     return;
   }
@@ -24,7 +25,7 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     boxes.appendChild(box);
   }
-
+  boxes.append(...boxesItems);
   input.value = '';
 }
 
